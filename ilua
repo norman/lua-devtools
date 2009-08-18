@@ -1,0 +1,1 @@
+exec /usr/bin/env lua -lluarocks.require -ldevtools.ilua

@@ -1,0 +1,33 @@
+h1. Lua Devtools
+
+This package provides a few tools to make your life as a Lua developer better. It's aimed primarily for use in projects where Lua it the primary language rather than embedded.
+
+It contains:
+
+* ilua - "A better interactive Lua command line":http://lua-users.org/wiki/InteractiveLua that prints return values as you go along (by Steve Donovan)
+* debugger - A "command-line debugger":http://luaforge.net/projects/clidebugger/ with readline support (by Dave Nichols)
+
+I am not the author of these tools, I only added readline support to the debugger and packaged them.
+
+Since the original authors did not release their work under any license, this package is released under the "WTFPL":http://sam.zoy.org/wtfpl/.
+
+h2. Usage
+
+To install, clone this repository and do "luarocks make devtools-*.rockspec". I may eventually put the rockspec on Luaforge but I'm just banging this out in 10 minutes right now and it's not exactly polished yet.
+
+h3. ilua
+
+Just run @ilua@ from the command line.
+
+h3. debugger
+
+Inclue devtools.debugger in your Lua program and execute it on the command line. The @pause@ function will give control to the debugger, where you can then step through code, watch variables, etc.
+
+<pre>
+<code>
+require 'luarocks.require'
+require 'devtools.debugger'
+pause("this will pause and give control to the debugger")
+print "hello world!"
+</code>
+</pre>
